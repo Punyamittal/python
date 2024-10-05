@@ -1,0 +1,47 @@
+import re
+pattern="was"
+text="""pratap Singh I (c. 9 May 1540 – 19 January 1597), popularly known as Maharana Pratap (IPA: [məɦaːˈɾaːɳaː pɾəˈtaːp] ⓘ), was a king of Kingdom of Mewar, in north-western India in the present-day state of Rajasthan. He is notable for leading the Rajput resistance against the expansionist policy of the Mughal Emperor Akbar including the Battle of Haldighati and the Battle of Dewair.
+Early life and accession
+Maharana Pratap was born to Udai Singh II of Mewar and Jaiwanta Bai in fgch154@#%0, the year in which Udai Singh ascended to the throne after defeating Vanvir Singh.[5][6][7] His younger brothers were Shakti Singh, Vikram Singh and Jagmal Singh. Pratap also had two stepsisters: Chand Kanwar and Man Kanwar. His chief consort was Ajabde Bai Punwar of Bijolia.[8] Their eldest son was Amar Singh I.[9] He belonged to the royal family of Mewar.[10] After the death of Udai Singh in 1572, Rani Dheer Bai Bhatiyani wanted her son Jagmal to succeed him[11] but senior courtiers preferred Pratap, as the eldest son, to be their king. The desire of the nobles prevailed and Pratap ascended the throne as Maharana Pratap, the 54th ruler of Mewar in the line of the Sisodia Rajputs.[12] He was crowned in Gogunda on the auspicious day of Holi. Jagmal swore revenge and left for Ajmer, to join the armies of Emperor Akbar. He was given the town of Jahazpur as a Jagir as a gift in return for his help.[13]
+Military career bBackground Pratap Singh, gained distinction for his refusal to form any political alliance with the Mughal Empire and his resistance to Mughal domination. The conflicts between Pratap Singh and Akbar led to the Battle of Haldighati.[14][15]"""
+match=re.search(pattern,text)
+print(match)
+p1=r"[A-Z|a-z]+ratap\sSingh"
+mat=re.finditer(p1,text)
+for i in mat:
+    print(i)
+p2=r"\w+tap"
+mah=re.finditer(p1,text)
+for i in mah:
+    print(i)
+p3="^f"
+mao=re.finditer(p3,text)
+for i in mao:
+    print(i)
+tx="abc abbbbc abc abbc abbbbbbbbc acf acc acafc afc acacabc"
+patt="ab*c"
+matches=re.finditer(patt,tx)
+for i in matches:
+    print(i.span())
+pat="ab+c"
+matchess=re.finditer(pat,tx)
+for i in matchess:
+    print(i)
+"""
+tx="abc abbbbc abc abbc abbbbbbbbc acf acc acafc afc acacabc"
+patt="ab{2,5}c"
+matches=re.finditer(patt,tx)
+for i in matches:
+    print(i)"""
+"""
+tx="abc abbbbc abc abbc abbbbbbbbc acf acc acafc afc acacabc"
+patt="[abc]"
+matches=re.finditer(patt,tx)
+for i in matches:
+    print(i)
+"""
+t="4+5 (3+4 2*9/4"
+p=r"\d+[\+-x\*]\d+"
+matchesss=re.finditer(p,t)
+for i in matchesss:
+    print(i)
