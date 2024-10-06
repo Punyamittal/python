@@ -1,0 +1,10 @@
+def same(tup):
+    ln=len(tup)
+    num=tup.count(tup[0])
+    if num==ln:
+        print('tuple',tup,'contains all the same elements')
+    else:
+        print('tuple',tup,'does not contain all the same elements')
+t=eval(input('enter tuple:'))
+print('tuple is',t)
+same(t)
