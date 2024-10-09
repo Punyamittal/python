@@ -1,0 +1,60 @@
+def add():
+    import csv
+    f=open('product.csv','w')
+    stufw=csv.writer(f)
+    stufw.writerow(['ProductId','Product Name','Price'])
+    
+    n=int(input('enter number of records:'))
+    for i in range(n):
+        pid=int(input('enter product id:'))
+        pname=input('enter name of product:')
+        price=int(input('enter price:'))
+        lst=[pid,pname,price]
+        stufw.writerow(lst)
+    f.close()
+def display():
+    import csv
+    f=open('product.csv','r',newline='\n')
+    stufr=csv.reader(f)
+    c=0
+    for rec in stufr:
+        print(rec)
+    f.close
+def modify():
+    import csv
+    f=open('product.csv','r',newline='\n')
+    stufr=csv.reader(f)
+    next(f)
+    f2=open('product.csv','w')
+    stuwritter=csv.writer(f2)
+    pid=int(input('enter product id whose data is to be changed:'))
+    g=0
+    for rec in stufr:
+         if int(rec[0])==pid:
+            rec[1]=input('enter new product name:')
+            rec[2]=int(input('enter new price:'))
+            print('record has been modified.')
+            g+=1
+            stuwritter.writerow(rec)
+
+        else:
+            stuwritter.writerow(rec)
+    if g==0:
+        print('record not found')
+    f.close
+    f2.close
+choice='y'
+while choice=='y':
+    print('1: to add data in csv file')
+    print('2: to display data in csv file')
+    print('3: to modify data in csv file')
+    ch=int(input('enter your choice:'))
+    if ch==1:
+        add()
+    elif ch==2:
+        display()
+    elif ch==3:
+        modify()
+    else:
+        print('wrong choice')
+    ch=input('enter y to continue')
