@@ -1,0 +1,27 @@
+def push(rn):
+    stack1.append(rn)
+    print('element added.')
+def pop():
+    while len(stack1)>0:
+        print('deleted element is',stack1.pop())
+    else:
+        print('stack is empty.', stack1)
+def display(stack):
+    length=len(stack)
+    if length>0:
+        for i in range(length-1,-1,-1):
+            print(stack[i])
+    else:
+        print('stack is empty')
+ans='y'
+stack1=[]
+while ans in 'yY':
+    choice=int(input('choose: 1=add element, 2=delete, 3=display'))
+    if choice==1:
+        r=input('enter element to be added;')
+        push(r)
+    if choice==2:
+        pop()
+    if choice==3:
+        display(stack1)
+    ans=input('do you want to continue: y/n')
