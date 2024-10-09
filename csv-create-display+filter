@@ -1,0 +1,48 @@
+def add():
+    import csv
+    f=open('product.csv','w')
+    stufw=csv.writer(f)
+    stufw.writerow(['ProductId','Product Name','Price'])
+    
+    n=int(input('enter number of records:'))
+    for i in range(n):
+        pid=int(input('enter product id:'))
+        pname=input('enter name of product:')
+        price=int(input('enter price:'))
+        lst=[pid,pname,price]
+        stufw.writerow(lst)
+    f.close()
+def display():
+    import csv
+    f=open('product.csv','r',newline='\n')
+    stufr=csv.reader(f)
+    c=0
+    for rec in stufr:
+        print(rec)
+    f.close
+def search():
+    import csv
+    f=open('product.csv','r',newline='\n')
+    stufr=csv.reader(f)
+    next(f)
+    print('products with prices greater than 200:') 
+    for rec in stufr:
+        if int(rec[2])>200:
+            print(rec[1])
+    f.close
+    
+choice='y'
+while choice=='y':
+    print('1: to add data in csv file')
+    print('2: to display data in csv file')
+    print('3: to search data in csv file( products with price higher than 200')
+    ch=int(input('enter your choice:'))
+    if ch==1:
+        add()
+    elif ch==2:
+        display()
+    elif ch==3:
+        search()
+    else:
+        print('wrong choice')
+    ch=input('enter y to continue')
