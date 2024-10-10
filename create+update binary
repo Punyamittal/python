@@ -1,0 +1,29 @@
+def writef():
+          import csv
+          f=open('student.csv','w')
+          stufw=csv.writer(f)
+          stufw.writerow(['rollno','name','marks'])
+          rec=[]
+
+          while True:
+                    rollno=int(input('enter roll number of student:'))
+                    name=input('enter name of student:')
+                    marks=float(input('enter marks:'))
+                    lst=[rollno,name,marks]
+                    rec.append(lst)
+                    ch=input('do you want to add more records?(y/n):')
+                    if ch in 'nN':
+                              break
+          for i in rec:
+                    stufw.writerow(i)
+          f.close()
+def readf():
+          import csv
+          f=open('student.csv','r',newline='\n')
+          stufr=csv.reader(f)
+          c=0
+          for rec in stufr:
+                    print(rec)
+          f.close
+writef()
+readf()
