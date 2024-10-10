@@ -1,0 +1,46 @@
+import pickle
+def insert_rec():
+    f = open("student.dat","wb")
+    c = 'yes'
+    r=[]
+    while True:
+        student_id=int(input("Enter ID:"))
+        name=input("Enter Name:")
+        city=input("Enter City:")
+        d = [student_id,name,city]
+        r.append(d)
+        print("Record Inserted.")
+        print("Want to insert more records")
+        c = input()
+        c = c.lower()
+        if c not in 'yes':
+            break
+    pickle.dump(r,f)
+    f.close()
+def search_rec():
+    f = open("student.dat","rb")
+    s=int(input("Enter id to search:"))
+    f1 = 0
+    d=pickle.load(f)
+    try:
+        
+            
+        for i in d:
+            if i[0]==s:
+                f1=1
+                print(i)
+                break
+    except Exception:
+        f.close()
+    if f1==0:
+        print("Record not found...")
+    else:
+        print("Record found...")
+while True:
+    ch=int(input('enter choice: 1. insert  2. search  3.exit'))
+    if ch==1:
+           insert_rec()
+    if ch==2:
+           search_rec()
+    if ch==3:
+           break
