@@ -1,0 +1,20 @@
+def write():
+    f=open('studentfile.txt','w')
+    n=int(input('enter no of lines:'))
+    for i in range(n):
+        line=input('enter line')
+        f.write(line)
+        f.write('\n')
+    f.close()
+write()
+def word(w):
+    cnt = 0
+    f=open('studentfile.txt','r')
+    data=f.read()
+    words = data.split()
+    for word in words:
+        if (word == w):
+            cnt+=1
+    print(w, "found ", cnt, " times from the file")
+word_search = input("Enter the words to search:")
+word(word_search)
