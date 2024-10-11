@@ -1,0 +1,30 @@
+import pickle
+def insert_rec():
+    f = open("student.dat","wb")
+    c = 'yes'
+    r=[]
+    while True:
+        student_id=int(input("Enter ID:"))
+        name=input("Enter Name:")
+        city=input("Enter City:")
+        d = [student_id,name,city]
+        r.append(d)
+        print("Record Inserted.")
+        print("Want to insert more records")
+        c = input()
+        c = c.lower()
+        if c not in 'yes':
+            break
+    pickle.dump(r,f)
+    f.close()
+    
+def display_rec():
+    f = open("student.dat","rb")
+    try:
+        while True:
+            d = pickle.load(f)
+            print(d)
+    except Exception:
+       f.close()
+insert_rec()
+display_rec()
