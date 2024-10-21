@@ -1,0 +1,4 @@
+import re
+txt=input()
+x=re.search("^[1-9][0-9]{9}$",txt)
+print(x)
