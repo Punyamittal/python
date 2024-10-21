@@ -1,0 +1,6 @@
+import re
+foo=input()
+if re.match("^24B[A-Z]{2}[0-9]{4}$",foo):
+    print("Matched")
+else:
+    print("Not matched")
