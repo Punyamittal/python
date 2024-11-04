@@ -1,0 +1,40 @@
+import pickle
+f=open("st.dat","wb")
+n=int(input("ENTER NUMBER OF RECORDS"))
+r=[]
+for i in range (0,n):
+    a=int(input())
+    b=int(input())
+    c=int(input())
+    d=[a,b,c]
+    r.append(d)
+pickle.dump(r,f)
+f.close
+f=open("st.dat","rb")
+while True:
+    try:
+        d=pickle.load(f)
+        print(d)
+    except EOFError:
+        break
+f.close()
+import pickle
+f=open("st.dat","ab")
+n=int(input("ENTER NUMBER OF RECORDS"))
+r=[]
+for i in range (0,n):
+    a=int(input())
+    b=int(input())
+    c=int(input())
+    d=[a,b,c]
+    r.append(d)
+pickle.dump(r,f)
+f.close
+f=open("st.dat","rb")
+while True:
+    try:
+        d=pickle.load(f)
+        print(d)
+    except EOFError:
+        break
+f.close()
