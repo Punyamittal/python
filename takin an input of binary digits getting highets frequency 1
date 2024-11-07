@@ -1,0 +1,14 @@
+l = list(map(int, input().split()))
+s=0
+q=[]
+print(l)
+for i in l:
+    if i==1:
+        s+=1
+    else:
+        print(s)
+        q.append(s)
+        s=0
+a=max(q)
+print(a)
+
