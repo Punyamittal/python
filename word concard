@@ -1,0 +1,8 @@
+l = input("Enter the words: ").split() 
+m=[]
+for i in l:
+    for j in l:
+        if i in j and len(i)!=len(j):
+            m.append(j)
+m=list(set(m))
+print(m)
