@@ -1,0 +1,8 @@
+def flatten(llist):
+    ft = []
+    for i in llist:
+        if isinstance(i,list):
+            ft.extend(flatten(i))
+        else:
+            ft.append(i)
+    return ft
