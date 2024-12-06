@@ -1,0 +1,16 @@
+import numpy as np
+import random
+ma = np.random.rand(4,4)
+mb = np.random.rand(4,4)
+print(f"matrix A is :")
+print(ma)
+print()
+print(f"matrix B is :")
+print(mb)
+print()
+result = np.dot(ma, mb)
+print(f"the product of the matices is:")
+print(result)
+print()
+print(f"Resultant matrix shape: {result.shape}")
+
